@@ -1,0 +1,69 @@
+/* MODAL STYLES */
+/* modal prefixed with jm- to prevent name clashes with any css libraries ex. bootstrap */
+.jmModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    overflow: auto;
+}
+
+.jmModal.open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jmModalBody {
+    position: fixed;
+    border-radius: 10px;
+}
+
+.jmModalBody img {
+    width: auto;
+    height: 600px;
+    border-radius: 10px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.75);
+}
+
+.body.jmModal-open {
+    overflow: hidden;
+}
+
+#btnClose {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: none;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 5px #fff);
+    }
+    &:before,
+    &:after {
+        position: absolute;
+        content: " ";
+        height: 20px;
+        width: 2px;
+        background-color: #333;
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+}
